@@ -2,7 +2,7 @@
 
 ### Seção 2.4
 
-1. O texto menciona "We say that $\preccurlyeq$ is a total order on $A$ if for any $a$, $b$ $\in$ $A$ we have $a \preccurlyeq b$ or $b \preccurlyeq a$". Esse ou deve ser exclusivo para a relação ser antisimétrica, certo?
+1. O texto menciona "We say that $\preccurlyeq$ is a total order on $A$ if for any $a$, $b$ $\in$ $A$ we have $a \preccurlyeq b$ or $b \preccurlyeq a$". Esse "ou" deve ser exclusivo para a relação ser antisimétrica, certo?
 
 2. O texto menciona "the set of the maximal elements of $(\~{A}, \preccurlyeq)$ is denoted by $\nabla^{\preccurlyeq}\~{A}$". Esse conjunto de elementos maximais deve ser maximal a que propriedade? Isso depende do caso de uso?
 
