@@ -4,6 +4,7 @@
 
 1. O texto menciona "We say that $\preccurlyeq$ is a total order on $A$ if for any $a$, $b$ $\in$ $A$ we have $a \preccurlyeq b$ or $b \preccurlyeq a$". Esse "ou" deve ser exclusivo para a relação ser antisimétrica, certo?
 
+
 2. O texto menciona "the set of the maximal elements of $(\~{A}, \preccurlyeq)$ is denoted by $\nabla^{\preccurlyeq}\~{A}$". Esse conjunto de elementos maximais deve ser maximal a que propriedade? Isso depende do caso de uso?
 
 3.  O texto menciona "the set of the minimal elements of $(\~{A}, \preccurlyeq)$ is denoted by $\nabla^{\preccurlyeq}\~{A}$". Esse conjunto de elementos minimais deve ser minimal a que propriedade? Isso depende do caso de uso?
@@ -20,13 +21,17 @@
 
 ### Seção 5
 
-1. $\varGamma_v^- = \varGamma^- \cap \varTheta_v^-$ isso significa os nós de uma altura $v$ que estão conectados a $C$ no intervalo $\llbracket a, b \rrbracket$?
+1. $\varGamma_v^- = \varGamma^- \cap \varTheta_v^-$ esse é o conjunto de nós de uma altura $v$ que estão conectados a $C$ no intervalo $\llbracket a, b \rrbracket$?
+
+    - Pega da base do nó e vai até $v$
 
 2. Em $C_v^+ = c \cup \bigcup \varGamma_v^- \in \varTheta_v^+$, quem percente a $\varTheta_v^+$ é a expressão toda, certo? Não somente $\varGamma_v^-$. Além disso, quais são os índice dessa união? Ela começa em $a$ e termina em $b$? 
 
 3. Em $\varGamma^+ = \{ C_v^+ \}_{v \in \llbracket a, b \rrbracket}$, essa notação é para um valor de $v$ ou para um conjunto de valores no intervalo $\llbracket a, b \rrbracket$?
 
 4. Em "In particular, Eq. (32) refines the definition initially given in Eq. (27).", refina em que sentido a definição?
+
+    - Reler trecho sobre o trecho de indices  
 
 5. Não entendi como fica distribuição das próprias partes dos novos nós na seguinte equação $\rho^+(C_v^+) = 
 \begin{cases} 
@@ -44,5 +49,9 @@
 
 ### Seção 6
 1. O que significa ser uma monoide?
+ - Satisfaz associatividade
+ - Satisfaz tambem comutatividade
 
 2. Na equação $\kappa(X) = \alpha(\rho(X)) \oplus \bigoplus_{Y \triangleleft X} \kappa(Y)$, o símbolo $Y \triangleleft X$ significa que o atributo está sofrendo update das folhas $Y$ até o nó $X$?
+
+---
