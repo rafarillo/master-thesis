@@ -1,0 +1,43 @@
+A morfologia matemática é uma subárea do processamento de imagens e da 
+visão computacional que tem como objetivo estudar e desenvolver transformações
+aplicadas a imagens, tendo como principal arcabouço teórico a teoria dos 
+conjuntos \cite{najman_graph-based_2014}. 
+Conforme sugere o próprio termo \textit{morfologia}, essa área busca analisar
+e extrair informações relacionadas às características geométricas dos objetos
+presentes nas imagens, como forma, tamanho e estrutura.
+
+Nessa busca pelo desenvolvimento de transformações, o uso de estrutura de dados,
+para representar e aplicar transformações em imagens, é extremamente necessário.
+Exemplos de estruturas são: quad-trees \cite{tanimoto_hierarchical_1975, hunter_operations_1979},
+binary partition tree \cite{salembier_binary_2000}, 
+watershed tree \cite{najman_geodesic_1996}
+
+A \textit{component tree} \cite{salembier_antiextensive_1998} é uma das 
+estruturas utilizadas para representar imagens. A ideia fundamental por trás 
+dessa estrutura consiste em representar uma imagem a partir da ordenação de 
+seu conjunto de pixels e de suas componentes conexas. Para isso, é necessário 
+definir o conceito de componente conexa em uma imagem 
+\cite{rosenfeld_connectivity_1970,perret_inf-structuring_2015} e, de forma 
+mais geral, estabelecer como uma imagem pode ser representada por meio de um 
+grafo \cite{najman_graph-based_2014}.
+
+A representação de uma imagem como um grafo é realizada de forma direta, 
+na qual os vértices correspondem aos pixels da imagem, enquanto as arestas 
+são definidas de acordo com um determinado modelo de conectividade 
+\cite{rosenfeld_connectivity_1970}.
+
+Conforme dito anteriormente, uma das premissas para a contrução da component
+tree é a ordenação do conjunto de pixels. Existem duas formas de ordenar 
+os pixels: de maneira ascendente ou de maneira descendente. Essas duas formas
+dão origem a duas estrutura de dados duais, a max tree cuja ordenação é 
+ascendente, ou seja, a relação de ordenação dos pixels se dá pelo operador
+ $\le$ entre os níves de cinza. E a min tree cuja ordenação é descendente,
+ ou seja, a relação de ordenaçõs dos pixels se dá pelo operador $\ge$ entre os níveis
+ de cinza.
+
+ A component tree originalmente foi desenhada para realizar operações conexas
+ com o propósito de resolver tarefas de filtragem e segmentação 
+ \cite{salembier_flat_1995,salembier_connected_2009}. Para realizar tais tarefas
+ a operação mais comum utilizada é o corte, que pode consistir na remoção de alguns
+ nós baseado na otimização de algum critério ou na remoção de alguns nós baseado
+ nos atributos contidos nos nós.
