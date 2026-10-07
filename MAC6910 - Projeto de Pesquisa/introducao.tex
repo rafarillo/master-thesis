@@ -40,4 +40,29 @@ ascendente, ou seja, a relação de ordenação dos pixels se dá pelo operador
  \cite{salembier_flat_1995,salembier_connected_2009}. Para realizar tais tarefas
  a operação mais comum utilizada é o corte, que pode consistir na remoção de alguns
  nós baseado na otimização de algum critério ou na remoção de alguns nós baseado
- nos atributos contidos nos nós.
+ nos atributos contidos nesses nós. 
+
+Tal estrutura é amplamente utilizada devido ao seu baixo custo computacional de
+construção. Segundo \cite{najman_building_2006}, uma imagem com $n$ pixels 
+pode ter sua \textit{component tree} construída em tempo $O(n\log n)$. 
+Além dessa característica, a \textit{component tree} permite extrair
+informações morfológicas relevantes das imagens. Por esse motivo, essa 
+estrutura tem sido empregada em abordagens de aprendizado profundo para a 
+extração de características, conforme apresentado em 
+\cite{alves_image_2020,farfan_cabrera_segmentation_2021,kerautret_combining_2023}.
+
+Nesse contexto, uma dificuldade encontrada na utilização de \textit{component trees}
+é a atualização dessa estrutura quando a imagem sofre alguma alteração. Isto é,
+quando a imagem sofre alguma alteração não existe nenhum algoritmo para atualizar
+\textit{component tree} de modo a representar a imagem transformada. Dessa forma,
+nesse caso de uso se faz necessário reconstruir a árvore novamente para cada 
+mudança que ocorre na imagem.
+
+Em \cite{luz_alves_component_2026} os autore propõem a operação de \textit{merge} (mescla)
+de nós para resolver parcialmente o problema de atualização. Como apontado também em 
+\cite{luz_alves_component_2026} o problema dual, \textit{split}/divisão, também
+precisa ser resolvido para poder-se atualizar completamente a árvore. 
+
+Sob esse contexto, esse projeto de pesquisa pretende contribuir com essa lacuna
+na literatura. Para simplificar, assim como \cite{luz_alves_component_2026} trata
+apenas de \textit{max tree}, esse projeto tratará também apenas desse tipo de estrutura. 
