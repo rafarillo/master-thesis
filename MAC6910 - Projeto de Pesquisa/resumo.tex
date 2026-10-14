@@ -1,0 +1,17 @@
+Este projeto investiga a atualização dinâmica de \textit{component trees}, 
+especialmente a \textit{max tree}, para lidar com alterações
+locais em imagens sem reconstruir toda a estrutura; 
+a morfologia matemática fornece o alicerce teórico para essa
+questão, baseada em conectividade, limiares e componentes
+conexas. O problema central é que mudanças no nível de cinza 
+podem fragmentar, fundir ou deslocar nós da árvore, tornando 
+a representação anterior inconsistente e exigindo reprocessamento 
+completo. Assim, o estudo propõe formalizar e desenvolver 
+a operação de \textit{split}, que divide um nó em 
+múltiplos filhos quando uma componente se fragmenta, 
+buscando eficiência, correção e atualizações locais. 
+ 
+Os objetivos incluem responder como a árvore deve ser 
+modificada, quais estruturas de dados permitem manter o 
+custo baixo, como recalcular atributos incrementalmente e 
+qual ganho prático se obtém comparada a reconstrução completa.
