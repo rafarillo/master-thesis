@@ -22,8 +22,11 @@
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage[most]{tcolorbox}
-\usepackage{xcolor} % Necessário para gerenciar cores
-
+\usepackage[table]{xcolor} % Necessário para gerenciar cores e cellcolor em tabelas
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color, colortbl}
+\usepackage{array}
 
 
 \newcommand{\supremo}[1]{\ensuremath{\bigvee^{#1}}}
@@ -139,6 +142,9 @@
 
 \section{Plano de trabalho e cronograma}
 \label{sec:plano_de_trabalho_cronograma}
+
+\input{plano}
+
 \section{Mitigação de Riscos}
 \label{sec:mitigacao_de_riscos}
 
