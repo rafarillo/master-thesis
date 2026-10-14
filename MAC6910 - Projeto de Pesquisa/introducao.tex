@@ -1,84 +1,86 @@
-A morfologia matemática é uma subárea do processamento de imagens e da 
-visão computacional que tem como objetivo estudar e desenvolver transformações
-aplicadas a imagens, tendo como principal arcabouço teórico a teoria dos 
-conjuntos \cite{najman_graph-based_2014}. 
-Conforme sugere o próprio termo \textit{morfologia}, essa área busca analisar
-e extrair informações relacionadas às características geométricas dos objetos
-presentes nas imagens, como forma, tamanho e estrutura.
+A morfologia matemática é uma subárea do processamento de imagens e da
+visão computacional, cujo objetivo consiste em estudar e desenvolver
+transformações aplicadas a imagens, tendo como principal arcabouço teórico a
+teoria dos conjuntos \cite{najman_graph-based_2014}. Conforme sugere o próprio
+termo \textit{morfologia}, essa área busca analisar e extrair informações
+relacionadas às características geométricas dos objetos presentes nas imagens,
+como forma, tamanho e estrutura.
 
-Nessa busca pelo desenvolvimento de transformações, o uso de estrutura de dados,
-para representar e aplicar transformações em imagens, é extremamente necessário.
-Exemplos de estruturas são: quad-trees \cite{tanimoto_hierarchical_1975, hunter_operations_1979},
-binary partition tree \cite{salembier_binary_2000}, 
-watershed tree \cite{najman_geodesic_1996}
+Nesse contexto, o uso de estruturas de dados para representar e aplicar
+transformações em imagens é essencial. Exemplos de estruturas incluem
+quad-trees \cite{tanimoto_hierarchical_1975, hunter_operations_1979},
+\textit{binary partition tree} \cite{salembier_binary_2000} e
+\textit{watershed tree} \cite{najman_geodesic_1996}.
 
-A \textit{component tree} \cite{salembier_antiextensive_1998} é uma das 
-estruturas utilizadas para representar imagens. A ideia fundamental por trás 
-dessa estrutura consiste em representar uma imagem a partir da ordenação de 
-seu conjunto de pixels e de suas componentes conexas. Para isso, é necessário 
-definir o conceito de componente conexa em uma imagem 
-\cite{rosenfeld_connectivity_1970,perret_inf-structuring_2015} e, de forma 
-mais geral, estabelecer como uma imagem pode ser representada por meio de um 
+A \textit{component tree} \cite{salembier_antiextensive_1998} é uma das
+estruturas utilizadas para representar imagens. A ideia fundamental por trás
+dessa estrutura consiste em representar uma imagem a partir da ordenação de
+seu conjunto de pixels e de suas componentes conexas. Para isso, é necessário
+definir o conceito de componente conexa em uma imagem
+\cite{rosenfeld_connectivity_1970, perret_inf-structuring_2015} e, de forma
+mais geral, estabelecer como uma imagem pode ser representada por meio de um
 grafo \cite{najman_graph-based_2014}.
 
-A representação de uma imagem como um grafo é realizada de forma direta, 
-na qual os vértices correspondem aos pixels da imagem, enquanto as arestas 
-são definidas de acordo com um determinado modelo de conectividade 
+A representação de uma imagem como grafo é realizada de forma direta: os
+vértices correspondem aos pixels da imagem, enquanto as arestas são definidas
+conforme um determinado modelo de conectividade
 \cite{rosenfeld_connectivity_1970}.
 
-Conforme dito anteriormente, uma das premissas para a contrução da component
-tree é a ordenação do conjunto de pixels. Existem duas formas de ordenar 
-os pixels: de maneira ascendente ou de maneira descendente. Essas duas formas
-dão origem a duas estrutura de dados duais, a max tree cuja ordenação é 
-ascendente, ou seja, a relação de ordenação dos pixels se dá pelo operador
- $\le$ entre os níves de cinza. E a min tree cuja ordenação é descendente,
- ou seja, a relação de ordenaçõs dos pixels se dá pelo operador $\ge$ entre os níveis
- de cinza.
+Conforme observado anteriormente, uma das premissas para a construção da
+\textit{component tree} é a ordenação do conjunto de pixels. Existem duas
+formas de ordenar os pixels: de maneira ascendente ou descendente. Essas
+formas dão origem a duas estruturas de dados duais: a \textit{max tree}, cuja
+ordenação é ascendente, isto é, a relação de ordenação dos pixels é dada pelo
+operador $\le$ entre os níveis de cinza; e a \textit{min tree}, cuja ordem é
+descendente, isto é, a relação de ordenação dos pixels é dada pelo operador
+$\ge$ entre os níveis de cinza.
 
- A component tree originalmente foi desenhada para realizar operações conexas
- com o propósito de resolver tarefas de filtragem e segmentação 
- \cite{salembier_flat_1995,salembier_connected_2009}. Para realizar tais tarefas
- a operação mais comum utilizada é o corte, que pode consistir na remoção de alguns
- nós baseado na otimização de algum critério ou na remoção de alguns nós baseado
- nos atributos contidos nesses nós. 
+A \textit{component tree} foi originalmente desenvolvida para realizar
+operações conexas com o propósito de resolver tarefas de filtragem e
+segmentação \cite{salembier_flat_1995, salembier_connected_2009}. Nesse
+contexto, a operação mais comum é o corte, que pode consistir na remoção de
+alguns nós com base na otimização de algum critério ou na eliminação de nós
+cujos atributos satisfaçam determinada regra.
 
-Tal estrutura é amplamente utilizada devido ao seu baixo custo computacional de
-construção. Segundo \cite{najman_building_2006}, uma imagem com $n$ pixels 
-pode ter sua \textit{component tree} construída em tempo $O(n\log n)$. 
+Tal estrutura é amplamente utilizada devido ao seu baixo custo computacional
+de construção. Segundo \cite{najman_building_2006}, uma imagem com $n$
+pixels pode ter sua \textit{component tree} construída em tempo $O(n\log n)$.
 Além dessa característica, a \textit{component tree} permite extrair
-informações morfológicas relevantes das imagens. Por esse motivo, essa 
-estrutura tem sido empregada em abordagens de aprendizado profundo para a 
-extração de características, conforme apresentado em 
-\cite{alves_image_2020,farfan_cabrera_segmentation_2021,kerautret_combining_2023}.
+informações morfológicas relevantes das imagens. Por esse motivo, essa
+estrutura tem sido empregada em abordagens de aprendizado profundo para a
+extração de características, conforme apresentado em
+\cite{alves_image_2020, farfan_cabrera_segmentation_2021, kerautret_combining_2023}.
 
-Nesse contexto, uma dificuldade encontrada na utilização de \textit{component trees}
-é a atualização dessa estrutura quando a imagem sofre alguma alteração. Isto é,
-quando a imagem sofre alguma alteração não existe nenhum algoritmo para atualizar
-\textit{component tree} de modo a representar a imagem transformada. Dessa forma,
-nesse caso de uso se faz necessário reconstruir a árvore novamente para cada 
-mudança que ocorre na imagem.
+Nesse contexto, uma dificuldade encontrada na utilização de
+\textit{component trees} é a atualização dessa estrutura quando a imagem sofre
+alguma alteração. Em outras palavras, quando a imagem é modificada, não existe
+um algoritmo que atualize a \textit{component tree} de forma a representá-la
+corretamente após a transformação. Diante disso, torna-se necessário
+reconstruir a árvore completa a cada mudança na imagem.
 
-Em \cite{luz_alves_component_2026} os autore propõem a operação de \textit{merge} (mescla)
-de nós para resolver parcialmente o problema de atualização. Como apontado também em 
-\cite{luz_alves_component_2026} o problema dual, \textit{split}/divisão, também
-precisa ser resolvido para poder-se atualizar completamente a árvore. 
+Em \cite{luz_alves_component_2026}, os autores propõem a operação de
+\textit{merge} (mescla) de nós para resolver parcialmente o problema de
+atualização. Como também observado em \cite{luz_alves_component_2026}, o
+problema dual, \textit{split}/divisão, também precisa ser resolvido para que
+seja possível atualizar completamente a árvore.
 
-Sob esse contexto, esse projeto de pesquisa pretende contribuir com essa lacuna
-na literatura. Para simplificar, assim como \cite{luz_alves_component_2026} trata
-apenas de \textit{max tree}, esse projeto tratará também apenas desse tipo de estrutura. 
+Sob esse contexto, este projeto de pesquisa pretende contribuir para essa
+lacuna na literatura. Para simplificar, assim como em
+\cite{luz_alves_component_2026}, o estudo será restrito à
+\textit{max tree}.
 
-Este documento está organizado da seguinte forma. Na seção \ref{sec:notacoes}
-serão introduzidas algumas das notações, propriedades e definições apresentadas
-em \cite{luz_alves_component_2026}. Em posse de tal conhecimento teórico, 
-na Seção \ref{sec:objetivos} será apresentada a pergunta de pesquisa de maneira formal, 
-bem como as perguntas auxiliares que a orientam. Na Seção 
-\ref{sec:metodologia}, serão descritos os métodos que serão empregados para 
-alcançar os objetivos propostos, bem como os procedimentos adotados para 
-garantir a reprodutibilidade da pesquisa. Na Seção 
-\ref{sec:plano_de_trabalho_cronograma}, será apresentado o planejamento das 
-atividades e a priorização das etapas a serem executadas, de modo a assegurar o 
-desenvolvimento adequado da pesquisa. Por fim, na Seção 
-\ref{sec:mitigacao_de_riscos}, serão discutidos os possíveis riscos 
-associados à pesquisa e propostas estratégias de mitigação e alternativas 
-para os casos em que o planejamento originalmente estabelecido não 
-produza os resultados esperados.
+Este documento está organizado da seguinte forma. Na Seção
+\ref{sec:notacoes}, serão introduzidas algumas das notações, propriedades e
+definições apresentadas em \cite{luz_alves_component_2026}. Em posse desse
+conhecimento teórico, na Seção \ref{sec:objetivos} será apresentada a
+pergunta de pesquisa de maneira formal, assim como as perguntas auxiliares que
+a orientam. Na Seção \ref{sec:metodologia}, serão descritos os métodos a
+serem empregados para alcançar os objetivos propostos, bem como os
+procedimentos adotados para garantir a reprodutibilidade da pesquisa. Na Seção
+\ref{sec:plano_de_trabalho_cronograma}, será apresentado o planejamento das
+atividades e a priorização das etapas a serem executadas, de modo a assegurar
+o desenvolvimento adequado da pesquisa. Por fim, na Seção
+\ref{sec:mitigacao_de_riscos}, serão discutidos os possíveis riscos
+associados à pesquisa e propostas estratégias de mitigação e alternativas para
+os casos em que o planejamento originalmente estabelecido não produza os
+resultados esperados.

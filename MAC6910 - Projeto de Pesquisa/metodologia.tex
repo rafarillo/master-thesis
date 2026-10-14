@@ -1,32 +1,33 @@
-Como mencionado na seção anterior, não basta apenas elaborar o algoritmo
-que reponsde a pergunta de pesquisa. É necessário garantir que o algoritmo
-proposto que responde a pergunta de pesquisa funcione em todas as instâncias
-do problema e possua performance melhor do que reconstruir a árvore de componentes.
-Posto isso, nesta seção iremos propor os passos necessários para garantir
-que o algoritmo desenvolvido seja eficiente e funcione para todas as intâncias
-do problema
+Como mencionado na seção anterior, não basta elaborar o algoritmo que responde
+à pergunta de pesquisa. É necessário garantir que o algoritmo proposto funcione
+em todas as instâncias do problema e apresente desempenho superior ao da
+reconstrução completa da árvore de componentes. Nesta seção propõem-se os
+passos necessários para assegurar que o algoritmo desenvolvido seja eficiente
+e correto em todas as instâncias do problema.
 
-Primeiramente, iremos pesquisar e construir um arcabouço teórico. Esse 
-arcabouço fornece o rigor matemático necessário para garantir que o 
-algoritmo que será desenvolvido possua a corretude e eficiência desejada.
-Não somente é necessário construir tal arcabouço, como também é necessário
-garantir que tal arcabouço esteja correto. Portanto uma etapa de demonstração
-de tal arcabouço se faz necessária.
+Em primeiro lugar, será pesquisado e construído um arcabouço teórico. Esse
+arcabouço fornecerá o rigor matemático necessário para demonstrar a
+correção e as propriedades de complexidade do algoritmo proposto. Além da
+construção teórica, inclui-se uma etapa dedicada a demonstrações formais do
+arcabouço.
 
-Segundamente, em posse de tal alicerce matemático, será possível construir o algoritmo
-que realiza a fragmentação de nós em uma \textit{max tree}. Caso não seja
-possível elaborar tal algoritmo de forma eficiente, esse alicerce funcionará
-também para explicar e demonstrar o porquê não é possível. Caso seja possível
-a elaboração do algoritmo, também é necessário demonstrar a sua corretude
-e a sua complexidade computacional em termos de espaço e de tempo. Nessa
-etapa um subetende-se que um pseudo-código será gerado.  
+Em segundo lugar, com o alicerce matemático estabelecido, será elaborada a
+versão algorítmica que realiza a fragmentação ("split") de nós em uma
+\textit{max tree}. Caso a construção de um algoritmo eficiente se prove
+impossível, o arcabouço permitirá justificar formalmente essa impossibilidade.
+Quando o algoritmo for proposto, pretende-se demonstrar sua corretude e
+analisar sua complexidade em termos de tempo e espaço. Nesta etapa será
+apresentado um pseudocódigo.
 
-Terceiramente, esse algoritmo será implementado em alguma linguam de computador
-para demonstrar a viabilidade física de implementação. Não somente isso, utilizaremos
-esse algoritmo implementado em datasets para coletar métricas que irão servir
-de comparação entre o algoritmo desenvolvido e a reconstrução de \textit{max tree}.
-Claramente antes de realizar tais testes um estudo de quais métricas serão selecionadas
-deve ser realizado previamente.
+Em terceiro lugar, o algoritmo será implementado em uma linguagem de
+programação a ser definida (por exemplo, C++ ou Python) para demonstrar a
+viabilidade prática da solução. A implementação será utilizada em conjuntos de
+dados para coletar métricas que permitam comparar o método proposto com a
+reconstrução completa da \textit{max tree}. Antes da execução dos testes, serão
+definidas explicitamente as métricas (por exemplo, tempo de execução, uso de
+memória, e precisão das propriedades estruturais) e os conjuntos de dados a
+serem utilizados.
 
-Finalmente, utilizaremos um estudo de caso com o algoritmo proposto para
-demonstrar praticamente em quais contextos ele pode ser utilizado.
+Por fim, relizar-se-á um estudo de caso para demonstrar, na prática, os
+contextos nos quais o operador de \textit{split} pode trazer benefício em
+relação às abordagens tradicionais.

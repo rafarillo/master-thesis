@@ -2,65 +2,67 @@
 
 Seja $A$ um conjunto. O conjunto potência de $A$, ou conjunto das partes,
 é denotado por $2^{A}$. Seja $S$ um conjunto de subconjuntos de $2^{A}$ 
-($S \subseteq 2^{A}$), escrevemos:
+($S \subseteq 2^{A}$); escrevemos:
 
 $$\bigcup S = \bigcup_{X \in S} X$$
 
 \subsection{Relações}
 
-Seja $a,\ b \in A$ e seja $\ltimes$ uma relação binária em $A$, ou seja, 
+Seja $a, b \in A$ e seja $\ltimes$ uma relação binária em $A$, ou seja,
 $\ltimes \subseteq A \times A$. Usamos a notação $a \ltimes b$ para expressar
 o elemento $(a, b) \in \ltimes$.
 
 Denotamos por $\rtimes$ a relação inversa associada a $\ltimes$, isto é,
-$(a \rtimes b) \iff (b \ltimes a)$
+$(a \rtimes b) \iff (b \ltimes a)$.
 
-Denotamos que o conjunto de elemento tais que a relação
+Denotamos o conjunto de elementos tais que a relação
 $a \ltimes b$ é verdadeira por:
 
 $$\ltimes(a) = \{ b \in A : a \ltimes b\}$$
 
 \subsection{Funções}
-Seja $B$ um subconjunto, uma função (ou uma aplicação) $\mathcal{F}$ de $A$
-para $B$  é uma parte de $A \times B$ tal que para qualquer $a \in A$ existe
-exatamente um $b \in B$ tal que $(a, b) \in \mathcal{F}$. Escrevemos 
+
+Seja $B$ um conjunto. Uma função (ou uma aplicação) $\mathcal{F}$ de $A$
+para $B$ é uma parte de $A \times B$ tal que, para qualquer $a \in A$, existe
+exatamente um $b \in B$ tal que $(a, b) \in \mathcal{F}$. Escrevemos
 $b = \mathcal{F}(a)$ para expressar tal par ordenado. Denotamos por
 $B^{A}$ o conjunto de todas as funções que levam $A$ para $B$.
 
-Seja $\widetilde{A} \subseteq A$, defini-se o seguinte conjunto
-$\mathcal{F}(\widetilde{A}) = \{\mathcal{F}(a) : a \in \widetilde{A}\}$. 
-Quando $\mathcal{F}(\widetilde{A}) = \{b\}$ escrevemos 
-$\mathcal{F}(\widetilde{A}) = b$ por abuso de notação. Seja $\widetilde{B} \subseteq B$,
-escrevemos $\mathcal{F}^{-1}(\widetilde{B}) = \{a \in A : \mathcal{F}(a) \in \widetilde{B}\}$.
+Seja $\widetilde{A} \subseteq A$. Define-se o conjunto
+$\mathcal{F}(\widetilde{A}) = \{\mathcal{F}(a) : a \in \widetilde{A}\}$.
+Quando $\mathcal{F}(\widetilde{A}) = \{b\}$ escrevemos
+$\mathcal{F}(\widetilde{A}) = b$ por abuso de notação. Seja
+$\widetilde{B} \subseteq B$, escrevemos
+$\mathcal{F}^{-1}(\widetilde{B}) = \{a \in A : \mathcal{F}(a) \in \widetilde{B}\}$.
 Quando $\widetilde{B} = \{b\}$ escrevemos $\mathcal{F}^{-1}(b)$ ao invés de
-$\mathcal{F}^{-1}(\{b\})$ por abuso de notação
+$\mathcal{F}^{-1}(\{b\})$ por abuso de notação.
 
 \subsection{Ordem}
 Seja $\preccurlyeq$ uma relação binária. Dizemos que $\preccurlyeq$ é uma ordem
 em $A$, mais precisamente que $(A, \preccurlyeq)$ é um conjunto ordenado, se
 a relação é reflexiva, transitiva e antissimétrica. Dizemos que $\preccurlyeq$
-é totalmente ordenado se além de ser ordenado também possuí a condição de
+é totalmente ordenado se, além de ser ordenado, também possui a condição de
 comparabilidade (ou totalidade). Dizemos que $\preccurlyeq$ é uma ordem
 parcial em $A$, ou \textit{poset}, se não possui a condição de comparabilidade.
 
-Suponha que $(A, \preccurlyeq)$ é um conjunto ordenado. Seja $\widetilde{A} \subseteq A$.
-Define-se o seguinte:
+Suponha que $(A, \preccurlyeq)$ é um conjunto ordenado. Seja
+$\widetilde{A} \subseteq A$. Define-se o seguinte:
 
 \begin{itemize}
-    \item O supremo de $(\widetilde{A}, \preccurlyeq)$ é denotado por \supremo{\preccurlyeq}$\widetilde{A}$
-    \item O ínfimo de $(\widetilde{A}, \preccurlyeq)$ é denotado por \infimo{\preccurlyeq}$\widetilde{A}$
-    \item O conjunto dos elementos maximais de $(A, \preccurlyeq)$ é denotado por \maximal{\preccurlyeq}$\tilde{A}$
-    \item O conjunto dos elementos minimais de $(A, \preccurlyeq)$ é denotado por \minimal{\preccurlyeq}$\tilde{A}$
+    \item O supremo de $(\widetilde{A}, \preccurlyeq)$ é denotado por $\supremo{\preccurlyeq}\widetilde{A}$.
+    \item O ínfimo de $(\widetilde{A}, \preccurlyeq)$ é denotado por $\infimo{\preccurlyeq}\widetilde{A}$.
+    \item O conjunto dos elementos maximais de $(A, \preccurlyeq)$ é denotado por $\maximal{\preccurlyeq}\widetilde{A}$.
+    \item O conjunto dos elementos minimais de $(A, \preccurlyeq)$ é denotado por $\minimal{\preccurlyeq}\widetilde{A}$.
 
 \end{itemize}
 
 O diagrama de Hasse do conjunto ordenado $(A, \preccurlyeq)$ é denotado por
-$(A, \lhd)$ e é uma remoção de redundâncidas das propriedades reflexias
+$(A, \lhd)$ e corresponde à remoção de redundâncias das propriedades reflexivas
 e transitivas. Por abuso de notação, o diagrama de Hasse no conjunto ordenado
-$(\tilde{A}, \preccurlyeq)$ também é denotado por $(\tilde{A}, \lhd)$.
+$(\widetilde{A}, \preccurlyeq)$ também é denotado por $(\widetilde{A}, \lhd)$.
 
 Quando $(A, \preccurlyeq)$ é um conjunto totalmente ordenado e $a \preccurlyeq b$
-com $a,\ b \in A$, denotamos o intervalo do elementos entre $a$ e $b$ por
+com $a, b \in A$, denotamos o intervalo de elementos entre $a$ e $b$ por
 
 $$\llbracket a, b \rrbracket = \{c \in A : a \preccurlyeq c \preccurlyeq b\}$$
 
@@ -68,36 +70,36 @@ $$\llbracket a, b \rrbracket = \{c \in A : a \preccurlyeq c \preccurlyeq b\}$$
 \label{sec:arvores}
 Seja $A$ um conjunto não vazio e $\preccurlyeq$ uma ordem em $A$. O conjunto
 ordenado $(A, \preccurlyeq)$ é considerado de ordem hierárquica superior
-se as seguintes condições são verdadeiras:
+se as seguintes condições são satisfeitas:
 
 \begin{enumerate}
-    \item $(A, \preccurlyeq)$ admite máximo \supremo{\preccurlyeq}$\widetilde{A}$
-    \item $\forall a \in A$, o conjunto $(\preccurlyeq (a), \preccurlyeq)$ é totalmente ordenado
+    \item $(A, \preccurlyeq)$ admite máximo $\supremo{\preccurlyeq}\widetilde{A}$.
+    \item $\forall a \in A$, o conjunto $(\preccurlyeq(a), \preccurlyeq)$ é totalmente ordenado.
 \end{enumerate}
 
-Sob essas condições, podemos dizer que se $(A, \preccurlyeq)$ é uma ordem hierárquica
+Sob essas condições, podemos dizer que, se $(A, \preccurlyeq)$ é uma ordem hierárquica
 superior, o diagrama de Hasse $(A, \lhd)$ de tal conjunto ordenado é uma árvore em que:
 
 \begin{enumerate}
-    \item A raíz é \supremo{\preccurlyeq} $A$
-    \item O conjunto de folhas é \minimal{\preccurlyeq} $A$
-    \item O conjunto de arestas é $\lhd$
+    \item A raiz é $\supremo{\preccurlyeq} A$.
+    \item O conjunto de folhas é $\minimal{\preccurlyeq} A$.
+    \item O conjunto de arestas é $\lhd$.
 \end{enumerate}
 
 A relação $\lhd$ pode ser vista como uma função $\lhd : A \rightarrow A$ e,
-portanto, podemos escrever como $\lhd(a) = b$ ao invés de $a \lhd b$.
+portanto, podemos escrever $\lhd(a) = b$ ao invés de $a \lhd b$.
 
-Seja $\emptyset \subset \widetilde{A} \subseteq A$. Uma subárvore de $(A, \lhd)$ é definida como:
+Seja $\emptyset \subset \widetilde{A} \subseteq A$. Uma subárvore de $(A, \lhd)$ é definida por:
 
-$$\overset{\triangle}{A} = \bigcup_{a \in \widetilde{A}} \llbracket a,  \text{\supremo{\preccurlyeq}} \widetilde{A} \rrbracket$$
+$$\overset{\triangle}{A} = \bigcup_{a \in \widetilde{A}} \llbracket a,  \supremo{\preccurlyeq} \widetilde{A} \rrbracket$$
 
 Ou seja, a árvore $(\overset{\triangle}{A}, \lhd)$ é uma subárvore de
-$(A, \lhd)$. Uma propriedade importante é, se $\overset{\triangle}{A} \ne A$
+$(A, \lhd)$. Uma propriedade importante é: se $\overset{\triangle}{A} \ne A$
 então:
 
 \begin{itemize}
-    \item $(A \setminus \overset{\triangle}{A}, \preccurlyeq)$ continua um conjunto ordenado superior
-    \item $(A \setminus \overset{\triangle}{A}, \lhd)$ continua sendo uma árvore
+    \item $(A \setminus \overset{\triangle}{A}, \preccurlyeq)$ continua sendo um conjunto ordenado superior.
+    \item $(A \setminus \overset{\triangle}{A}, \lhd)$ continua sendo uma árvore.
 \end{itemize}
 
 \subsection{Árvore de componentes}
@@ -107,40 +109,39 @@ definir o que é uma imagem e o que é a árvore de componentes dessa imagem.
 
 \begin{definition}[relação de adjacência]
     Seja $\mathbb{P}$ um conjunto finito. Uma relação binária {\Large $\frown$}$\subseteq \mathbb{P} \times \mathbb{P}$
-é dita de adjacência se for irreflexiva e simétrica.
+    é dita de adjacência se for irreflexiva e simétrica.
 \end{definition}
 
 \begin{definition}[relação de conectividade]
     Uma relação de adjacência {\Large $\frown$} induz uma relação de conectividade $\sim$ em
-    $\mathbb{P}$. Dois elementos $x,\  y \in \mathbb{P}$ são ditos conexos ou conectados($x \sim y$)
+    $\mathbb{P}$. Dois elementos $x, y \in \mathbb{P}$ são ditos conexos ou conectados ($x \sim y$)
     se e somente se $x \frown y$ ou se existe uma sequência finita com $k \ge 1$
-    formada por elementos $x_0,\ x_1,\ \dots, x_k \in \mathbb{P}$ tal que:
+    formada por elementos $x_0, x_1, \dots, x_k \in \mathbb{P}$ tal que:
 
     \begin{enumerate}
-        \item $x_0 = x$
-        \item $x_k = y$
-        \item $x_i \frown x_{i+1}$ para todo $i \in \{0,\ 1,\ \dots, k-1\}$
+        \item $x_0 = x$.
+        \item $x_k = y$.
+        \item $x_i \frown x_{i+1}$ para todo $i \in \{0, 1, \dots, k-1\}$.
     \end{enumerate}
 \end{definition}
 
 \begin{definition}
     Um conjunto $X \subseteq \mathbb{P}$ é dito ser uma componente conexa
-    se for maximal a propriedade de conexidade.
+    se for maximal relativamente à propriedade de conexidade.
 \end{definition}
 
 Para qualquer $X \subseteq \mathbb{P}$, o conjunto de componentes conexas de $X$
-é denotado por $\Pi (X)$ (com $\Pi(\emptyset) = \emptyset$). Note que
+é denotado por $\Pi(X)$ (com $\Pi(\emptyset)=\emptyset$). Note que,
 quando $X \ne \emptyset$, o conjunto $\Pi(X)$ é uma partição de $X$.
-Quando $X \ne \emptyset$,  usamos $\mathscr{C}(X)$ para expressar
-que $X$ é um conjunto conexo, ou seja, que possui apenas uma componente conexa
-($\Pi(X) = \{X\}$)
+Quando $X \ne \emptyset$, usamos $\mathscr{C}(X)$ para indicar que $X$ é conexo, isto é, que possui apenas uma componente conexa
+($\Pi(X)=\{X\}$).
 
 \begin{definition}
 Seja $\mathbb{V} \subseteq \mathbb{Z}$ um conjunto finito com a relação de ordem
-$\le$. Seja $\bot = \text{\infimo{\le}}$ $\mathbb{V}$ e $\top = \text{\supremo{\le}}$ $\mathbb{V}$.
-Uma imagem em níveis de cinza $I$ é uma função $I: \mathbb{P} \rightarrow \mathbb{V}$ onde
-o domínio $\mathbb{P}$ (comumente chamado de \textit{pixels}) possui relação de adjacência, e o contradomínio
-são os níveis de cinza da imagem.
+$\le$. Seja $\bot$ e $\top$ os menores e maiores elementos de $\mathbb{V}$, respectivamente.
+Uma imagem em níveis de cinza $I$ é uma função $I:\mathbb{P}\rightarrow\mathbb{V}$, onde
+o domínio $\mathbb{P}$ (comumente chamado de \textit{pixels}) possui relação de adjacência e o contradomínio
+corresponde aos níveis de cinza da imagem.
 \end{definition}
 
 Seja $v \in \mathbb{V}$. A função de limiar para um valor $v$ é definida como
@@ -162,11 +163,11 @@ O conjunto de componentes conexas é
 $$\Theta_v = \Pi (\Lambda_v)$$
 
 Seja o intervalo $\llbracket \alpha, \beta \rrbracket \subseteq \mathbb{V}$,
-o conjunto de todas as componentes conexas para os valores de $v$ é definido como
+o conjunto de todas as componentes conexas para os valores de $v$ é definido por
 
-$$\Theta_{\llbracket \alpha, \beta \rrbracket} = \bigcup_{v \in \llbracket, \alpha, \beta \rrbracket} \Theta_v$$
+$$\Theta_{\llbracket \alpha, \beta \rrbracket} = \bigcup_{v \in \llbracket \alpha, \beta \rrbracket} \Theta_v$$
 
-Portanto, o conjunto de todas as componentes conexas para todas os limiares
+Portanto, o conjunto de todas as componentes conexas para todos os limiares
 é denotado por 
 
 $$\Theta = \Theta_{\llbracket \bot, \top \rrbracket}$$
@@ -175,49 +176,47 @@ A partir da definição de $\Theta$ agora podemos introduzir o conceito de
 árvore de componentes. Considere a relação binária parcial $\subseteq$ em 
 $\Theta$, ou seja, considere o conjunto de ordem parcial $(\Theta, \subseteq)$.
 Note que tal conjunto é considerado de ordem hierárquica superior
-devido ao conceito apresentado em \ref{sec:arvores}, poís:
+devido ao conceito apresentado em \ref{sec:arvores}, pois:
 
 \begin{enumerate}
-    \item O máximo de tal conjunto corresponde a $\mathbb{P} = \text{\supremo{\subseteq}} \Theta$
+    \item O máximo de tal conjunto corresponde a $\mathbb{P} = \supremo{\subseteq} \Theta$.
     \item Para qualquer componente $X_v \in \Theta_v$ ($v \in \llbracket \bot + 1, \top \rrbracket$)
-existe exatamente uma componente $X_{v-1} \ in \Theta_{v-1}$ tal que $X_v \subseteq X_{v-1}$.
-Portanto $(\subseteq(X), \subseteq)$ é totalmente ordenado
+    existe exatamente uma componente $X_{v-1} \in \Theta_{v-1}$ tal que $X_v \subseteq X_{v-1}$.
+    Portanto, $(\subseteq(X), \subseteq)$ é totalmente ordenado.
 \end{enumerate}
 
 Conforme apresentado em \ref{sec:arvores}, o diagrama de Hasse de 
-$(\Theta, \subseteq)$ é uma árvore. Como essa árvore construida armazena a
-informação das componentes conexas, a ela denominamos de árvore de componentes,
-para ser mais específico a árvore construida é a \textit{max tree}.
+$(\Theta, \subseteq)$ é uma árvore. Como essa árvore construída armazena a
+informação das componentes conexas, a ela denominamos de árvore de componentes;
+mais especificamente, a árvore construída é a \textit{max tree}.
 
 \begin{definition}
     A \textit{max tree} $\mathscr{T}$ é o diagrama de Hasse $(\Theta, \lhd)$ do conjunto
-    de ordem parcial $(\Theta, \subseteq)$. Os elementos de $\Theta$ são 
-    os nós da árvore. A raiz é \supremo{\subseteq} $\Theta$. As folhas são
-    os elementos de \minimal{\subseteq} $\Theta$. As arestas são os
+    de ordem parcial $(\Theta, \subseteq)$. Os elementos de $\Theta$ são
+    os nós da árvore. A raiz é $\supremo{\subseteq}\Theta$. As folhas são
+    os elementos de $\minimal{\subseteq}\Theta$. As arestas são os
     elementos de $\lhd$.
 \end{definition}
 
-A título de curiosidade a \textit{max tree} possui uma árvore dual chamada
-de \textit{min tree}, em que para sua construção basta substituir o operador
-$\le$ por $\ge$ na equação \eqref{eq:limiar} 
+A título de curiosidade, a \textit{max tree} possui uma árvore dual chamada
+\textit{min tree}; para sua construção basta substituir o operador
+$\le$ por $\ge$ na equação \eqref{eq:limiar}.
 
 É fácil notar que essa definição de \textit{max tree} não é computacionalmente eficiente em termos de memória.
-Em \cite{luz_alves_component_2026} uma versão computacionalmente eficiente é adotada. Como
-o propósito desse projeto de pesquisa é apenas contextualizar o problema, não iremos abordar tal assunto. 
+Em \cite{luz_alves_component_2026} é adotada uma versão mais eficiente. Como
+o propósito deste projeto de pesquisa é apenas contextualizar o problema, tal assunto não será abordado aqui.
 
 \subsection{Merge}
 Conforme explicado em \ref{sec:introducao}, a árvore de componentes é amplamente
 utilizada para diversas operações. No entanto, quando a imagem é alterada
-se faz necessário reconstruir a árvore inteira. Nesse sentido \cite{luz_alves_component_2026}
-resolve parcialmente esse problema ao propor a operação de mescla (\textit{merge})
-entre os nós da árvore. Nessa seção iremos formular o problema da mescla com o intuito
-de fornecer o contexto para o objetivo dessa pesquisa.
-
+faz-se necessária a reconstrução total da árvore. Nesse sentido, \cite{luz_alves_component_2026}
+propõe a operação de mescla (\textit{merge}) entre os nós da árvore. A seguir
+formular-se-á o problema da mescla com o intuito de fornecer o contexto para o objetivo desta pesquisa.
 
 \textbf{Pergunta 1}: sejam $I^{-}: \mathbb{P} \rightarrow \mathbb{V}$ uma imagem antes de sofrer
-alguma transformação, $\mathscr{T}^{-}_{\text{max}}$ a \textit{max tree} associada a $I^{-}$, 
-$C \subset \mathbb{P}$ um conjunto conexo, $a = \text{\infimo{\le}}I^{-}(C)$ e 
-$b \in \mathbb{V}$ tal que $b > \text{\supremo{\le}}I^{-}(C)$.
+alguma transformação, $\mathscr{T}^{-}_{\text{max}}$ a \textit{max tree} associada a $I^{-}$,
+$C \subset \mathbb{P}$ um conjunto conexo, $a = \infimo{\le}I^{-}(C)$ e
+$b \in \mathbb{V}$ tal que $b > \supremo{\le}I^{-}(C)$.
 A imagem $I^{+}$ é definida como:
 
 $$\begin{array}{|llll}
@@ -230,14 +229,11 @@ Seja $\mathscr{T}_{\text{max}}^{+}$ a \textit{max tree} associada a $I^{+}$.
 Sob essas condições, como devemos modificar $\mathscr{T}_{\text{max}}^{-}$
 para obter $\mathscr{T}_{\text{max}}^{+}$?
 
-\textbf{Pergunta 2}: sejam $\mathscr{T}_{\text{min}}^{-}$ a \textit{min tree} de $I^{-}$ 
-e $\overset{\triangle}{\mathscr{T}_{\text{min}}^{-}}$ uma subárvore
-da \text{min tree}. Seja $\mathscr{T}_{\text{min}}^{+}$
-a min tree obtida ao se remover a súbárvore $\overset{\triangle}{\mathscr{T}_{\text{min}}^{-}}$
-de $\mathscr{T}_{\text{min}}^{-}$. Seja $I^{+}$ a imagem reconstruida
-a partir de $\mathscr{T}_{\text{min}}^{+}$. Como modificar
-$\mathscr{T}_{\text{max}}^{-}$ para obter $\mathscr{T}_{\text{max}}^{+}$ sob
-essas condições?
-
-% $I^{+}$ a imagem resultante ao se aplicar alguma transformação em $I^{-}$,
-% $\mathscr{T}^{+}_{\textit{max}}$ a \textit{max tree} associada a $I^{+}$,
+\textbf{Pergunta 2}: sejam $\mathscr{T}_{\text{min}}^{-}$ a \textit{min tree} de $I^{-}$
+ e $\overset{\triangle}{\mathscr{T}_{\text{min}}^{-}}$ uma subárvore
+ dessa \textit{min tree}. Seja $\mathscr{T}_{\text{min}}^{+}$
+ a \textit{min tree} obtida ao remover a subárvore $\overset{\triangle}{\mathscr{T}_{\text{min}}^{-}}$
+ de $\mathscr{T}_{\text{min}}^{-}$. Seja $I^{+}$ a imagem reconstruída
+ a partir de $\mathscr{T}_{\text{min}}^{+}$. Como modificar
+ $\mathscr{T}_{\text{max}}^{-}$ para obter $\mathscr{T}_{\text{max}}^{+}$ sob
+ essas condições?

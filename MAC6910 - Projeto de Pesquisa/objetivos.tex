@@ -1,8 +1,8 @@
-Queremos resolver o problema dual que foi proposta na \textbf{Pergunta 1}, isto é,
+Objetiva-se resolver o problema dual proposto na \textbf{Pergunta 1}, isto é,
 sejam $I^{-}: \mathbb{P} \rightarrow \mathbb{V}$ uma imagem antes de sofrer
-alguma transformação, $\mathscr{T}^{-}_{\text{max}}$ a \textit{max tree} associada a $I^{-}$, 
-$C \subset \mathbb{P}$ um conjunto conexo, $a = \text{\infimo{\le}}I^{-}(C)$ e 
-$b \in \mathbb{V}$ tal que $b \le \text{\supremo{\le}}I^{-}(C)$.
+alguma transformação, $\mathscr{T}^{-}_{\text{max}}$ a \textit{max tree} associada a $I^{-}$,
+$C \subset \mathbb{P}$ um conjunto conexo, $a = \infimo{\le}I^{-}(C)$ e
+$b \in \mathbb{V}$ tal que $b > \supremo{\le}I^{-}(C)$.
 A imagem $I^{+}$ é definida como:
 
 $$\begin{array}{|llll}
@@ -12,51 +12,50 @@ $$\begin{array}{|llll}
 \end{array}$$
 
 \begin{tcolorbox}[colback=gray!15, colframe=gray!50, arc=2mm]
-  \textbf{Pergunta de Pesquisa:} Seja $\mathscr{T}_{\text{max}}^{+}$ a \textit{max tree} associada a $I^{+}$.
-Sob essas condições, como devemos modificar $\mathscr{T}_{\text{max}}^{-}$
-para obter $\mathscr{T}_{\text{max}}^{+}$?
+  \textbf{Pergunta de pesquisa:} Seja $\mathscr{T}_{\text{max}}^{+}$ a \textit{max tree} associada a $I^{+}$.
+  Sob essas condições, como deve ser modificada $\mathscr{T}_{\text{max}}^{-}$
+  para obter $\mathscr{T}_{\text{max}}^{+}$?
 \end{tcolorbox}
 
-Resolver esse problema dual significa elaborar um algoritmo eficiente de
-divisão de nós em uma \textit{max tree}. No entanto, para resolver esse
-problema faz-se necessário responder perguntas de pesquisa auxiliares sobre 
-modelagem teórica e topológica, complexidade algorítmica e estrutura de dados,
-manutenção dinâmica de atributos, generalização e validação.
+Resolver esse problema dual implica a elaboração de um algoritmo eficiente de
+divisão de nós em uma \textit{max tree}. Para tanto, tornam-se necessárias
+questões auxiliares sobre modelagem teórica e topológica, complexidade
+algorítmica e estruturas de dados, manutenção dinâmica de atributos,
+generalização e validação.
 
 \begin{tcolorbox}[colback=gray!15, colframe=gray!50, arc=2mm]
-\textbf{Pergunta sobre modelagem teórica:} Como definir formalmente a 
-reestruturação das componentes conexas e a redistribuição de arestas 
-quando a redução de valores de cinza em um conjunto de píxeis provoca a
- fragmentação de um nó da max-tree em múltiplos nós-filhos?
+\textbf{Pergunta sobre modelagem teórica:} Como definir formalmente a
+reestruturação das componentes conexas e a redistribuição de arestas quando a
+redução de níveis de cinza em um conjunto de pixels provoca a fragmentação de
+um nó da \textit{max tree} em múltiplos nós-filhos?
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=gray!15, colframe=gray!50, arc=2mm]
 \textbf{Pergunta sobre complexidade algorítmica e estruturas de dados:}
-Quais estruturas de dados e rotinas de rastreamento local permitem 
-limitar a complexidade da operação de split, evitando que ela degrade 
-para o custo de uma reconstrução $O(n\log n)$? 
+Quais estruturas de dados e rotinas de rastreamento local permitem limitar a
+complexidade da operação de \textit{split}, evitando que ela degrade para o
+custo de uma reconstrução $O(n\log n)$?
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=gray!15, colframe=gray!50, arc=2mm]
 \textbf{Pergunta sobre manutenção dinâmica de atributos:}
 De que maneira os atributos dos nós (como área, momentos e caixas
-delimitadoras) podem ser recalculados de forma local e incremental 
-quando a massa de píxeis de um nó é particionada entre novas 
-ramificações da árvore? 
+delimitadoras) podem ser recalculados de forma local e incremental quando a
+massa de pixels de um nó é particionada entre novas ramificações da árvore?
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=gray!15, colframe=gray!50, arc=2mm]
-\textbf{Pergunta generalização:}
-Como combinar as operações de merge (já resolvidas) e de split em um 
-modelo unificado que suporte alterações arbitrárias e simultâneas de 
+\textbf{Pergunta sobre generalização:}
+Como combinar as operações de \textit{merge} (já estudadas) e de \textit{split}
+em um modelo unificado que suporte alterações arbitrárias e simultâneas de
 níveis de cinza em pontos isolados da imagem? Existem outros operadores
-necessários para generalizar? 
+necessários para essa generalização?
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=gray!15, colframe=gray!50, arc=2mm]
-\textbf{Pergunta validação:}
-Qual é o ganho de desempenho computacional obtido com o operador de 
-split em filtros conectados complexos, granulometrias e no 
-processamento interativo de imagens de grande escala em relação aos 
-métodos tradicionais de reconstrução
+\textbf{Pergunta sobre validação:}
+Qual é o ganho de desempenho computacional obtido com o operador de
+\textit{split} em filtros conectados complexos, granulometrias e no
+processamento interativo de imagens de grande escala, em comparação com os
+métodos tradicionais de reconstrução?
 \end{tcolorbox}
