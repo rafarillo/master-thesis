@@ -1,0 +1,115 @@
+\subsection{Riscos e contingência}
+
+O projeto envolve desafios teóricos, algorítmicos e 
+experimentais, de modo que é necessário antecipar possíveis 
+dificuldades e definir estratégias de resposta. 
+A seguir, são apresentados os principais riscos e as 
+contingências previstas.
+
+\subsubsection{Formalização teórica da operação de split}
+
+Um risco central é a dificuldade de formalizar a divisão 
+de um nó da \textit{max tree} em múltiplos nós-filhos, 
+especialmente no que tange à redistribuição de 
+componentes conexas e de arestas após uma alteração 
+local na imagem. Essa dificuldade pode comprometer 
+tanto a correção do modelo quanto a clareza da 
+demonstração matemática.
+
+Como contingência, a formalização será conduzida em 
+etapas progressivas: primeiro, com transformações simples 
+e casos particulares; em seguida, com generalização para 
+situações mais complexas. A construção de contraexemplos 
+e casos limite será usada para validar a consistência 
+do arcabouço teórico.
+
+\subsubsection{Eficiência e corretude do algoritmo}
+
+O operador de \textit{split} pode não atingir o nível de 
+eficiência desejado, ou ainda pode exigir estruturas de 
+dados e procedimentos de manutenção mais complexos do 
+que o inicialmente previsto. Nesse caso, o algoritmo 
+pode perder vantagem em relação à reconstrução 
+completa da árvore.
+
+Como contingência, será adotada uma estratégia 
+incremental de desenvolvimento, com análise de 
+complexidade em cada etapa, além de manutenção de 
+invariantes estruturais. A validação será feita tanto 
+por demonstrações formais quanto por comparação 
+experimental com a reconstrução completa.
+
+\subsubsection{Atualização de atributos dos nós}
+
+A recalculação de atributos como área, momentos e 
+caixas delimitadoras pode ser mais custosa do que o 
+esperado, sobretudo quando a fragmentação de um nó 
+gera múltiplas ramificações. Esse risco pode afetar a 
+viabilidade prática do método.
+
+Como contingência, serão identificados atributos que 
+podem ser atualizados localmente e 
+incrementalmente, e serão propostas estruturas 
+auxiliares para evitar revisões globais da 
+árvore. Caso seja necessário, a abordagem será 
+restrita a um conjunto de atributos e operações de 
+menor complexidade.
+
+\subsubsection{Implementação e reprodutibilidade}
+
+A implementação do algoritmo pode revelar problemas 
+não observados na formulação matemática, 
+como erros de representação da árvore, 
+tratamento de casos degenerate e inconsistências 
+na manutenção das componentes afetadas.
+
+Como contingência, a implementação será modularizada 
+e acompanhada de testes unitários para 
+subrotinas específicas. Além disso, serão definidos 
+critérios de reprodutibilidade, 
+métricas padronizadas e conjuntos de dados de 
+referência para avaliar a consistência da solução.
+
+\subsubsection{Validação experimental}
+
+Há risco de que os ganhos observados em termos de 
+desempenho computacional não sejam suficientemente 
+relevantes em alguns cenários de aplicação, 
+reduzindo o impacto prático da proposta.
+
+Como contingência, a avaliação 
+experimental será planejada antes da 
+implementação, com métricas bem definidas para 
+tempo de execução, uso de memória e número de 
+operações locais. A comparação com a reconstrução 
+completa da \textit{max tree} será central para 
+demonstrar o benefício real do operador.
+
+\subsubsection{Cronograma e escopo da pesquisa}
+
+Devido à combinação de teoria, algoritmo, implementação e 
+experimentação, o projeto pode sofrer desvio de 
+cronograma ou expansão de escopo em uma de suas etapas.
+
+Como contingência, o cronograma será revisado 
+periodicamente, e os objetivos serão organizados em 
+marcos intermediários. Caso uma extensão teórica ou 
+experimental se mostre mais complexa do que o previsto, 
+a pesquisa será priorizada para os elementos essenciais 
+da contribuição: formalização, correção, eficiência e validação 
+do operador de \textit{split}.
+
+\subsubsection{Dependência da literatura}
+
+A literatura sobre atualização dinâmica de 
+\textit{component trees} e sobre o operador dual de 
+\textit{split} ainda é relativamente escassa, 
+o que pode dificultar a comparação direta com o 
+estado da arte.
+
+Como contingência, a revisão bibliográfica será contínua e 
+integrada ao desenvolvimento do trabalho. 
+Sempre que necessário, novas referências serão incorporadas 
+ao arcabouço teórico para situar a contribuição no 
+contexto da morfologia matemática e das estruturas 
+hierárquicas de imagens.
