@@ -237,3 +237,236 @@ para obter $\mathscr{T}_{\text{max}}^{+}$?
  a partir de $\mathscr{T}_{\text{min}}^{+}$. Como modificar
  $\mathscr{T}_{\text{max}}^{-}$ para obter $\mathscr{T}_{\text{max}}^{+}$ sob
  essas condições?
+ 
+\begin{figure}[ht]
+    \centering
+    % Subfigura (a)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=8cm,
+                ymin=0, ymax=9.5,
+                xmin=0.5, xmax=15.5,
+                xtick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},
+                xticklabels={$\mathbf{x}_1$, $\mathbf{x}_2$, $\mathbf{x}_3$, $\mathbf{x}_4$, $\mathbf{x}_5$, $\mathbf{x}_6$, $\mathbf{x}_7$, $\mathbf{x}_8$, $\mathbf{x}_9$, $\mathbf{x}_{10}$, $\mathbf{x}_{11}$, $\mathbf{x}_{12}$, $\mathbf{x}_{13}$, $\mathbf{x}_{14}$, $\mathbf{x}_{15}$},
+                ytick={0,1,2,3,4,5,6,7,8,9},
+                ymajorgrids=true,
+                grid style={dotted, gray!80},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=false,
+                % Posicionando os labels dos eixos como na imagem
+                every axis y label/.style={at={(0,1)}, anchor=south, yshift=2pt},
+                ylabel={$\mathbb{V}$},
+                every axis x label/.style={at={(1,0)}, anchor=west, xshift=2pt},
+                xlabel={$\mathbb{P}$},
+                % Largura das barras para que fiquem coladas
+                bar width=14.5pt,
+            ]
+            
+            % Barras pretas
+            \addplot[ybar, fill=black, draw=black] coordinates {
+                (1,0.2) (2,7) (3,4) (4,8) (5,9) (6,5) (7,4) (8,2) (9,5) (10,3) (11,8) (12,7) (13,6) (14,1) (15,4)
+            };
+            
+            % Marcadores pretos (fora do conjunto C)
+            \addplot[only marks, mark=square*, mark options={draw=white, fill=black, scale=1.3, line width=0.5pt}] coordinates {
+                (1,0.2) (2,7) (3,4) (4,8) (5,9) (11,8) (12,7) (13,6) (14,1) (15,4)
+            };
+            
+            % Marcadores rosas (dentro do conjunto C)
+            \addplot[only marks, mark=square*, mark options={draw=white, fill=mypink, scale=1.3, line width=0.5pt}] coordinates {
+                (6,5) (7,4) (8,2) (9,5) (10,3)
+            };
+            \end{axis}
+        \end{tikzpicture}
+        \caption{$I^-$}
+    \end{subfigure}
+    \hfill
+    % Subfigura (b)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=8cm,
+                ymin=0, ymax=9.5,
+                xmin=0.5, xmax=15.5,
+                xtick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},
+                xticklabels={$\mathbf{x}_1$, $\mathbf{x}_2$, $\mathbf{x}_3$, $\mathbf{x}_4$, $\mathbf{x}_5$, $\mathbf{x}_6$, $\mathbf{x}_7$, $\mathbf{x}_8$, $\mathbf{x}_9$, $\mathbf{x}_{10}$, $\mathbf{x}_{11}$, $\mathbf{x}_{12}$, $\mathbf{x}_{13}$, $\mathbf{x}_{14}$, $\mathbf{x}_{15}$},
+                ytick={0,1,2,3,4,5,6,7,8,9},
+                ymajorgrids=true,
+                grid style={dotted, gray!80},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=false,
+                every axis y label/.style={at={(0,1)}, anchor=south, yshift=2pt},
+                ylabel={$\mathbb{V}$},
+                every axis x label/.style={at={(1,0)}, anchor=west, xshift=2pt},
+                xlabel={$\mathbb{P}$},
+                bar width=14.5pt,
+            ]
+            
+            % Barras pretas
+            \addplot[ybar, fill=black, draw=black] coordinates {
+                (1,0.2) (2,7) (3,4) (4,8) (5,9) (6,7) (7,7) (8,7) (9,7) (10,7) (11,8) (12,7) (13,6) (14,1) (15,4)
+            };
+            
+            % Marcadores pretos (fora do conjunto C)
+            \addplot[only marks, mark=square*, mark options={draw=white, fill=black, scale=1.3, line width=0.5pt}] coordinates {
+                (1,0.2) (2,7) (3,4) (4,8) (5,9) (11,8) (12,7) (13,6) (14,1) (15,4)
+            };
+            
+            % Marcadores rosas (dentro do conjunto C ajustado para b=7)
+            \addplot[only marks, mark=square*, mark options={draw=white, fill=mypink, scale=1.3, line width=0.5pt}] coordinates {
+                (6,7) (7,7) (8,7) (9,7) (10,7)
+            };
+            \end{axis}
+        \end{tikzpicture}
+        \caption{$I^+$}
+    \end{subfigure}
+    \caption{As imagens acima ilustram o cenário da \textbf{pergunta 1}. Exemplo
+    retirado de \cite{luz_alves_component_2026}}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    % Subfigura (a)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=8cm,
+                ymin=0, ymax=9.5,
+                xmin=0.5, xmax=15.5,
+                xtick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},
+                xticklabels={$\mathbf{x}_1$, $\mathbf{x}_2$, $\mathbf{x}_3$, $\mathbf{x}_4$, $\mathbf{x}_5$, $\mathbf{x}_6$, $\mathbf{x}_7$, $\mathbf{x}_8$, $\mathbf{x}_9$, $\mathbf{x}_{10}$, $\mathbf{x}_{11}$, $\mathbf{x}_{12}$, $\mathbf{x}_{13}$, $\mathbf{x}_{14}$, $\mathbf{x}_{15}$},
+                ytick={0,1,2,3,4,5,6,7,8,9},
+                ymajorgrids=true,
+                grid style={dotted, gray!80},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=false,
+                % Posicionando os labels dos eixos como na imagem
+                every axis y label/.style={at={(0,1)}, anchor=south, yshift=2pt},
+                ylabel={$\mathbb{V}$},
+                every axis x label/.style={at={(1,0)}, anchor=west, xshift=2pt},
+                xlabel={$\mathbb{P}$}
+            ]
+            
+            % Linhas horizontais cinzas (componentes)
+            \draw[gray, thick] (axis cs:1,0) -- (axis cs:15,0);
+            \draw[gray, thick] (axis cs:2,1) -- (axis cs:15,1);
+            \draw[gray, thick] (axis cs:2,2) -- (axis cs:13,2);
+            \draw[gray, thick] (axis cs:3,3) -- (axis cs:7,3);
+            \draw[gray, thick] (axis cs:9,3) -- (axis cs:13,3);
+            \draw[gray, thick] (axis cs:3,4) -- (axis cs:7,4);
+            \draw[gray, thick] (axis cs:9,4) -- (axis cs:13,4);
+            \draw[gray, thick] (axis cs:4,5) -- (axis cs:6,5);
+            \draw[gray, thick] (axis cs:11,5) -- (axis cs:13,5);
+            \draw[gray, thick] (axis cs:4,6) -- (axis cs:5,6);
+            \draw[gray, thick] (axis cs:11,6) -- (axis cs:13,6);
+            \draw[gray, thick] (axis cs:4,7) -- (axis cs:5,7);
+            \draw[gray, thick] (axis cs:11,7) -- (axis cs:12,7);
+            \draw[gray, thick] (axis cs:4,8) -- (axis cs:5,8);
+
+            % Arestas da árvore (linhas pretas)
+            \draw[thick] (axis cs:8,0) -- (axis cs:9,1);
+            \draw[thick] (axis cs:9,1) -- (axis cs:8,2);
+            \draw[thick] (axis cs:9,1) -- (axis cs:15,4);
+            \draw[thick] (axis cs:8,2) -- (axis cs:5,4);
+            \draw[thick] (axis cs:8,2) -- (axis cs:11,3);
+            \draw[thick] (axis cs:5,4) -- (axis cs:2,7);
+            \draw[thick] (axis cs:5,4) -- (axis cs:5,5);
+            \draw[thick] (axis cs:5,5) -- (axis cs:5,8);
+            \draw[thick] (axis cs:5,8) -- (axis cs:6,9);
+            \draw[thick] (axis cs:11,3) -- (axis cs:10,5);
+            \draw[thick] (axis cs:11,3) -- (axis cs:12,6);
+            \draw[thick] (axis cs:12,6) -- (axis cs:11,7);
+            \draw[thick] (axis cs:11,7) -- (axis cs:11,8);
+
+            % Nós (marcadores circulares coloridos)
+            \addplot[only marks, mark=*, mark options={draw=black, fill=myyellow, scale=1.5}] coordinates {
+                (8,0) (9,1) (15,4) (2,7) (6,9) (11,8)
+            };
+            \addplot[only marks, mark=*, mark options={draw=black, fill=mycyan, scale=1.5}] coordinates {
+                (8,2)
+            };
+            \addplot[only marks, mark=*, mark options={draw=black, fill=myblue, scale=1.5}] coordinates {
+                (5,4) (5,5) (10,5) (11,3) (12,6) (11,7)
+            };
+            \addplot[only marks, mark=*, mark options={draw=black, fill=mygreen, scale=1.5}] coordinates {
+                (5,8)
+            };
+            \end{axis}
+        \end{tikzpicture}
+        \caption{$\mathscr{T}^-_{\max}$}
+    \end{subfigure}
+    \hfill
+    % Subfigura (b)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\textwidth,
+                height=8cm,
+                ymin=0, ymax=9.5,
+                xmin=0.5, xmax=15.5,
+                xtick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},
+                xticklabels={$\mathbf{x}_1$, $\mathbf{x}_2$, $\mathbf{x}_3$, $\mathbf{x}_4$, $\mathbf{x}_5$, $\mathbf{x}_6$, $\mathbf{x}_7$, $\mathbf{x}_8$, $\mathbf{x}_9$, $\mathbf{x}_{10}$, $\mathbf{x}_{11}$, $\mathbf{x}_{12}$, $\mathbf{x}_{13}$, $\mathbf{x}_{14}$, $\mathbf{x}_{15}$},
+                ytick={0,1,2,3,4,5,6,7,8,9},
+                ymajorgrids=true,
+                grid style={dotted, gray!80},
+                axis x line=bottom,
+                axis y line=left,
+                enlarge x limits=false,
+                every axis y label/.style={at={(0,1)}, anchor=south, yshift=2pt},
+                ylabel={$\mathbb{V}$},
+                every axis x label/.style={at={(1,0)}, anchor=west, xshift=2pt},
+                xlabel={$\mathbb{P}$}
+            ]
+            
+            % Linhas horizontais cinzas (componentes)
+            \draw[gray, thick] (axis cs:1,0) -- (axis cs:15,0);
+            \draw[gray, thick] (axis cs:2,1) -- (axis cs:15,1);
+            \draw[gray, thick] (axis cs:2,2) -- (axis cs:13,2);
+            \draw[gray, thick] (axis cs:2,3) -- (axis cs:13,3);
+            \draw[gray, thick] (axis cs:2,4) -- (axis cs:13,4);
+            \draw[gray, thick] (axis cs:4,5) -- (axis cs:13,5);
+            \draw[gray, thick] (axis cs:4,6) -- (axis cs:13,6);
+            \draw[gray, thick] (axis cs:4,7) -- (axis cs:12,7);
+            \draw[gray, thick] (axis cs:4,8) -- (axis cs:5,8);
+            
+            % Arestas da árvore (linhas pretas)
+            \draw[thick] (axis cs:8,0) -- (axis cs:9,1);
+            \draw[thick] (axis cs:9,1) -- (axis cs:15,4);
+            \draw[thick] (axis cs:9,1) -- (axis cs:8,4);
+            \draw[thick] (axis cs:8,4) -- (axis cs:2,7);
+            \draw[thick] (axis cs:8,4) -- (axis cs:9,6);
+            \draw[thick] (axis cs:9,6) -- (axis cs:5,8);
+            \draw[thick] (axis cs:9,6) -- (axis cs:11,8);
+            \draw[thick] (axis cs:5,8) -- (axis cs:6,9);
+
+            % Nós (marcadores circulares coloridos)
+            \addplot[only marks, mark=*, mark options={draw=black, fill=myyellow, scale=1.5}] coordinates {
+                (8,0) (9,1) (15,4) (2,7) (11,8) (6,9)
+            };
+            \addplot[only marks, mark=*, mark options={draw=black, fill=mycyan, scale=1.5}] coordinates {
+                (8,4)
+            };
+            \addplot[only marks, mark=*, mark options={draw=black, fill=myblue, scale=1.5}] coordinates {
+                (9,6)
+            };
+            \addplot[only marks, mark=*, mark options={draw=black, fill=mygreen, scale=1.5}] coordinates {
+                (5,8)
+            };
+            \end{axis}
+        \end{tikzpicture}
+        \caption{$\mathscr{T}^+_{\max}$}
+    \end{subfigure}
+    \caption{\textit{Max tree} das imagens $I^-$ e $I^+$ respectivamente.
+    Exemplo retirado de \cite{luz_alves_component_2026}}
+\end{figure}

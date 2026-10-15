@@ -27,8 +27,17 @@
 \usepackage{float}
 \usepackage{color, colortbl}
 \usepackage{array}
-\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subcaption}
 
+\pgfplotsset{compat=1.18}
+
+% Definindo a cor rosa dos marcadores
+\definecolor{mypink}{RGB}{255, 192, 203}
+\definecolor{myyellow}{RGB}{250, 215, 35}
+\definecolor{mycyan}{RGB}{0, 160, 205}
+\definecolor{myblue}{RGB}{10, 40, 220}
+\definecolor{mygreen}{RGB}{10, 210, 30}
 
 \newcommand{\supremo}[1]{\ensuremath{\bigvee^{#1}}}
 \newcommand{\infimo}[1]{\ensuremath{\bigwedge^{#1}}}
