@@ -19,14 +19,29 @@ Quando o algoritmo for proposto, pretende-se demonstrar sua corretude e
 analisar sua complexidade em termos de tempo e espaço. Nesta etapa será
 apresentado um pseudocódigo.
 
-Em terceiro lugar, o algoritmo será implementado em uma linguagem de
-programação a ser definida (por exemplo, C++ ou Python) para demonstrar a
-viabilidade prática da solução. A implementação será utilizada em conjuntos de
-dados para coletar métricas que permitam comparar o método proposto com a
-reconstrução completa da \textit{max tree}. Antes da execução dos testes, serão
-definidas explicitamente as métricas (por exemplo, tempo de execução, uso de
-memória, e precisão das propriedades estruturais) e os conjuntos de dados a
-serem utilizados.
+Em terceiro lugar, o algoritmo será implementado primeiramente em
+python para demonstrar a viabilidade prática da solução. Em seguida será realizado
+uma conversão de python para C++ para a etapa de testes, a qual sua importância será 
+explicada a seguir. Além das demonstrações conceituais, para assegurar que a implementação
+está correta irão ser implementados testes unitários automatizados para a operação de split.
+O óraculo para estes testes é simples, basta comparar os nós da árvore que sofreu
+o \textit{split} com a árvore que será reconstruída.
+
+Em quarto lugar, utilizar-se-á a implementação em C++ para a coleta de dados pois
+o executável gerado por compiladores dessa linguagem costumam empiricamente 
+possuir perfomance melhor se comparado a línguagens interpretadas como python.
+O dataset que será utilizado será o \textit{Occluded RoadText Challange} 
+para podermos fazer uma comparação direta com os resultados de \cite{luz_alves_component_2026}.
+Algumas métricas que serão coletadas são: número de subárvores geradas, número
+de nós gerados, tempo de execução etc. Os fatores experimentais que irão ser
+controlados para os testes nesse dataset são: resolução e escala da imagem,
+tamanho da região afetada pela transformação($C$), amplitude do intervalo de valores ($[a, b]$)
+% A implementação será utilizada em conjuntos de
+% dados para coletar métricas que permitam comparar o método proposto com a
+% reconstrução completa da \textit{max tree}. Antes da execução dos testes, serão
+% definidas explicitamente as métricas (por exemplo, tempo de execução, uso de
+% memória, e precisão das propriedades estruturais) e os conjuntos de dados a
+% serem utilizados.
 
 Por fim, relizar-se-á um estudo de caso para demonstrar, na prática, os
 contextos nos quais o operador de \textit{split} pode trazer benefício em

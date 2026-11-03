@@ -44,18 +44,26 @@ cujos atributos satisfaçam determinada regra.
 
 Tal estrutura é amplamente utilizada devido ao seu baixo custo computacional
 de construção. Segundo \cite{najman_building_2006}, uma imagem com $n$
-pixels pode ter sua \textit{component tree} construída em tempo $O(n\log n)$.
+pixels pode ter sua \textit{component tree} construída em tempo quasi-linear.
 Além dessa característica, a \textit{component tree} permite extrair
 informações morfológicas relevantes das imagens. Por esse motivo, essa
 estrutura tem sido empregada em abordagens de aprendizado profundo para a
 extração de características, conforme apresentado em
 \cite{alves_image_2020, farfan_cabrera_segmentation_2021, kerautret_combining_2023}.
 
+% Nesse contexto, uma dificuldade encontrada na utilização de
+% \textit{component trees} é a atualização dessa estrutura quando a imagem sofre
+% alguma alteração. Em outras palavras, quando a imagem é modificada, não existe
+% um algoritmo que atualize a \textit{component tree} de forma a representá-la
+% corretamente após a transformação. Diante disso, torna-se necessário
+% reconstruir a árvore completa a cada mudança na imagem.
+
 Nesse contexto, uma dificuldade encontrada na utilização de
 \textit{component trees} é a atualização dessa estrutura quando a imagem sofre
 alguma alteração. Em outras palavras, quando a imagem é modificada, não existe
-um algoritmo que atualize a \textit{component tree} de forma a representá-la
-corretamente após a transformação. Diante disso, torna-se necessário
+um algoritmo genérico que atualize a \textit{component tree} de forma a representá-la
+corretamente após a transformação. Em \cite{luz_alves_component_2026} apenas
+um dos operadores para atualizar a \textit{component tree} é proposto. Diante disso, torna-se necessário
 reconstruir a árvore completa a cada mudança na imagem.
 
 Em \cite{luz_alves_component_2026}, os autores propõem a operação de
