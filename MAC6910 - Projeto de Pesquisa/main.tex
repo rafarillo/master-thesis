@@ -29,6 +29,7 @@
 \usepackage{array}
 \usepackage{pgfplots}
 \usepackage{subcaption}
+\usepackage{hyperref}
 
 \pgfplotsset{compat=1.18}
 
@@ -167,9 +168,66 @@
 
 \input{mitigacao}
 
+\section{Pontos de melhoria}
+
+\begin{enumerate}
+  \item \textbf{Ajustar o título ao alcance do problema.} A sugestão é usar
+  \emph{“Atualização dinâmica de max-trees sob transformações
+  anti-extensivas locais”} como título principal, pois ele descreve melhor a
+  investigação.
+
+  \item \textbf{Caracterizar melhor os efeitos da transformação.} A expressão
+  “dividir um nó em múltiplos filhos” não cobre todas as situações: uma
+  componente pode desaparecer, permanecer conexa com suporte menor ou se
+  fragmentar. É necessário partir dos conjuntos de limiar e explicar como
+  essas mudanças determinam os nós e as relações da max-tree resultante.
+  Devem ser distinguidos o caso em que a região alterada possui um único nível
+  de cinza e aquele em que contém vários níveis.
+
+  \item \textbf{Esclarecer a relação com o artigo publicado no \emph{JMIV} e
+  o objetivo de eficiência.} Deve-se explicar que o problema em aberto é a
+  atualização da max-tree sob transformações anti-extensivas. Não é necessário
+  exigir desempenho superior à reconstrução em todas as instâncias, pois uma
+  alteração pequena pode romper conexões entre regiões grandes. O objetivo
+  deve ser caracterizar o custo em função da região efetivamente processada e
+  identificar situações em que a atualização oferece vantagem.
+
+  \item \textbf{Dar mais espaço à representação da árvore e à validação.}
+  Partes próprias, níveis, relações pai--filho e mapeamento pixel--nó são
+  fundamentais para formular o algoritmo. A comparação com a reconstrução
+  completa deve verificar equivalência estrutural: reconstruir a mesma imagem,
+  por si só, não garante que a árvore esteja correta. Exemplos mínimos e testes
+  devem acompanhar o desenvolvimento desde o início.
+
+  \item \textbf{Delimitar atributos e experimentos.} Recomenda-se priorizar a
+  atualização estrutural e começar com poucos atributos, como área e momentos
+  geométricos. Convém combinar imagens reais com casos sintéticos que controlem
+  a fragmentação e medir tanto a quantidade de trabalho realizado quanto o
+  tempo. Um estudo de caso que realmente exija a operação de split deve ser
+  escolhido desde o início.
+
+  \item \textbf{Explorar uma possível aplicação.} Uma possibilidade é a
+  correção interativa de imagens para segmentação baseada em max-tree. O usuário
+  poderia aumentar ou diminuir intensidades localmente para recuperar
+  conexões ou separar objetos, com atualização da árvore e da segmentação após
+  cada edição. Essa aplicação permitiria combinar operações de merge e split e
+  comparar o custo da atualização com o da reconstrução completa. O trabalho
+  de Naegel e Passat (2014), disponível em
+  \href{https://doi.org/10.5201/ipol.2014.71}{https://doi.org/10.5201/ipol.2014.71}, apresenta código e demonstração
+  e pode servir como ponto de partida para esse estudo de caso.
+
+  \item \textbf{Ajustar a organização das seções.} Foram propostas as
+  seguintes denominações: \emph{Fundamentos teóricos e notação} no lugar de
+  “Notações e teoria”, \emph{Problema de pesquisa e objetivos} no lugar de
+  “Objetivos” e \emph{Riscos e estratégias de mitigação} no lugar de
+  “Mitigação de Riscos”. Na seção de objetivos, a formulação do problema, o
+  objetivo geral, os objetivos específicos e as perguntas de pesquisa devem ser
+  apresentados separadamente. Os demais títulos podem ser mantidos. Além disso,
+  a numeração \emph{7.0.1} deve ser substituída por \emph{7.1} e as ocorrências
+  de “Escrita da tese” devem ser substituídas por “Redação da dissertação”.
+\end{enumerate}
+
 \bibliographystyle{plain}
 \bibliography{export-data}
 
 \end{document}
-
-%TODO: Adicionar uma seção entre introdução e objetivo para colocar arcabouço teórico
